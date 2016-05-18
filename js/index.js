@@ -34,11 +34,21 @@ $(window).scroll(function() {
 	}
 });
 
-$('ul li a, #backtotop').on('click', function (event){
+$('ul li a').on('click', function (event){
+	$('ul li a').removeClass('active');
 	event.preventDefault();
 	$('html, body').animate({
 		scrollTop: $( $( this ).attr('href') ).offset().top
 	}, 500);
+	$(this).addClass('active');
+});
+
+$('#backtotop').on('click', function (event){
+	event.preventDefault();
+	$('html, body').animate({
+		scrollTop: $( $( this ).attr('href') ).offset().top
+	}, 500);
+	$('ul li a').removeClass('active');
 });
 
 $('.hamburger').on('click', function() {

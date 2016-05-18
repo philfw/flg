@@ -59,6 +59,12 @@ a.next {
 	background-repeat:no-repeat;
 }
 
+.active {
+	opacity:.7;
+	font-weight:900;
+	transition:all .2s;
+}
+
 /*HEADER*/
 
 header {
@@ -87,7 +93,7 @@ nav {
 	position:absolute;
 	font-family:'biryani', sans-serif;
 	font-weight:200;
-	font-size:2vmin;
+	font-size:2.25vmin;
 	top:3.75vmin;
 	right:3vmin;
 	width:auto;
@@ -191,6 +197,8 @@ nav a:hover:before, .hamburger a:hover:before {
 
 h1 {
 	font-size:6vmin;
+	font-weight:900;
+	letter-spacing:.75vmin;
 }
 
 h2 {
