@@ -2,8 +2,7 @@
 // TITLE FADEIN
 
 $(document).ready(function(){
-	$('.title').fadeIn(500);
-	$('.title').css('display','table-cell')
+	$('.title').slideDown(900);
 });
 
 // SUBMIT FORM

@@ -184,15 +184,18 @@ nav a:hover:before, .hamburger a:hover:before {
 .title {
 	position:absolute;
 	display:none;
-	width:70%;
+	width:100%;
 	height:auto;
-	margin-left:15%;
-	top:35%;
+	top:30%;
 	text-align:center;
 	font-family:'biryani', sans-serif;
 	font-weight:200;
 	padding:10%;
-	border:2px #80ff00 solid;
+	border-top:2px #000 solid;
+	border-bottom:2px #000 solid;
+	background-image:url('../images/prana.jpg');
+	background-size:cover;
+	color:#fff;
 }
 
 h1 {
@@ -351,9 +354,6 @@ textarea[value] {
 	a.logo {font-size:24px;}
 	nav {display:none; font-size:20px;}
 	.hamburger {display:inline-block;}
-	.title{
-		width:70%;
-		margin-left:15%;
-	}
+	.title{}
 	h1{font-size:8vmin;}
 	h2{font-size:4vmin;}
