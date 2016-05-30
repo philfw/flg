@@ -2,7 +2,10 @@
 // TITLE FADEIN
 
 $(document).ready(function(){
-	$('.title').slideDown(900);
+	$('.title').slideDown(900, function() {
+		$('.next').fadeIn(900);
+		$('.down-arrow').fadeIn(900);
+	});
 });
 
 // SUBMIT FORM
@@ -24,16 +27,14 @@ function submitForm () {
 
 $(window).scroll(function() {
 	if ($(this).scrollTop() >= 200){
-		$('header').addClass('shadow');
 		$('#backtotop').fadeIn(100);
 	}
 	else {
-		$('header').removeClass('shadow');
 		$('#backtotop').fadeOut(100);
 	}
 });
 
-$('ul li a').on('click', function (event){
+$('ul li a, .next').on('click', function (event){
 	$('ul li a').removeClass('active');
 	event.preventDefault();
 	$('html, body').animate({
