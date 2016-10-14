@@ -8,21 +8,6 @@ $(document).ready(function(){
 	});
 });
 
-// SUBMIT FORM
-
-$('form#publish').on('submit', function (event) {
-	event.preventDefault();
-	submitForm();
-});
-
-function submitForm () {
-	var emailVal = $('#emailSubmit').val();
-	if (emailVal.indexOf('@') >=0) {
-		window.open("https://twitter.com/share?text=I just registered a work with %23Soleau ID %23"+soleauId+"");
-	}
-	else {$('#emailSubmit').css('color','red');} 
-};
-
 // NAV
 
 $(window).scroll(function() {
@@ -56,4 +41,20 @@ $('.hamburger').on('click', function() {
 	$('.hamburger .line:eq(1)').fadeToggle(50);
 	$('.hamburger .line').last().toggleClass('rotate-ccw');
 	$('.hamburger ul').fadeToggle(200);
+});
+
+//ABOUT FADE-INS
+
+$window = $(window);
+
+$window.scroll(function() {
+	if ($window.scrollTop() >= ($('#about').offset().top - 40)) {
+		$('.table .card').each(function(i, el){
+			var firm = ['iliya.jpg','phil.jpg','becca.jpg','jess.jpg']
+			setTimeout(function(){
+				$(el).addClass('flipped');
+				$(el).css('background-image', firm[i])
+			}, i * 500);
+		});
+	}
 });

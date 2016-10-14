@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-	transition-property:opacity;
+	transition:all;
 	opacity:.5;
 	transition-duration: .2s;
 }
@@ -80,6 +80,10 @@ a.next {
 	background-repeat:no-repeat;
 }
 
+.border-line {
+	border-bottom: 1px #80ff00 solid;
+}
+
 .active {
 	opacity:.7;
 	font-weight:900;
@@ -87,9 +91,9 @@ a.next {
 }
 
 .block {
-	width:80%;
-	height:80%;
-	margin-left:10%;
+	width:100%;
+	height:auto;
+	margin-left:
 	text-align:center;
 }
 
@@ -99,6 +103,7 @@ header {
 	height:8%;
 	width:100%;
 	background-color:#fff;
+	opacity:.6;
 	position:fixed;
 	z-index:1;
 	color:#000;
@@ -226,49 +231,49 @@ h1 {
 	font-size:6vmin;
 	font-weight:900;
 	letter-spacing:.75vmin;
+	text-align:center;
 }
 
 h2 {
 	font-size:3vmin;
 	margin-bottom:1vmin;
+	text-align:center;
+	color:#fff;
+	margin-top:30px;
+}
+
+h3 {
+	font-size:3vmin;
+	display:inline-block;
+	padding:1vmin;
+	height:auto;
+	width:auto;
+	text-align:center;
+	font-family:'biryani', sans-serif;
+	margin:0 48.375vmin 40px 48.375vmin;
+}
+
+p {
+	font-size:2.25vmin;
+	display:inline-block;
+	padding:1vmin;
+	height:auto;
+	width:auto;
+	text-align:center;
+	font-family:'biryani', sans-serif;
+	margin:0 20vmin 40px 20vmin;
 }
 
 /*ABOUT*/
 
-.container2 {
-	height:100vh;
-	width:100%;
-	display:table;
-}
-
-div.about {
-	text-align:center;
-	display:table-cell;
-	vertical-align: middle;
-	padding-top:60px;
-}
-
-.about p {
-	font-family:'josefin slab', sans-serif;
-	font-size:24px;
-	line-height:1.2;
-	width:60%;
-	margin:20px 20%;
-	text-align:justify;
-}
-
-.about a {
-	margin-top:40px;
-}
-
 .next {
 	position:absolute;
-	bottom:calc(14% - 100px);
-	width:100px;
-	height:100px;
-	padding:20px;
+	bottom:3%;
+	width:8vh;
+	height:8vh;
+	padding:1vh;
 	border-radius:50%;
-	left:calc(50% - 50px);
+	left:calc(50% - 4vh);
 	z-index:100;
 	background-color:white;
 	cursor:pointer;
@@ -277,60 +282,85 @@ div.about {
 
 .down-arrow {
 	background-image:url('../images/down-arrow.svg');
-	width:60px;
-	height:60px;
+	width:6vh;
+	height:6vh;
 	display:none;
 }
 
-/*WORK*/
-
-#work {
-	font-family:'josefin slab', sans-serif;
-	font-size:24px;
-	line-height:1.2;
-	display:table-cell;
-	vertical-align: middle;
-	width:60%;
-	margin:20px 20%;
-	text-align:center;
+.table {
+	width:25%;
+	height:30vh;
+	margin-right:-4px;
 	position:relative;
+	perspective:800px;
+	display:inline-block;
+	cursor:pointer;
+	transition:all .2s;
 }
 
-#work p {
-	margin-top:40px;
-	margin-bottom:40px;
-	width:60%;
-	margin-left:20%;
+.table:hover {
+
 }
 
-textarea {
-	display:block;
-	font-family:'josefin slab', sans-serif;
-	line-height:1.2;
-	font-size:24px;
-	width:60%;
-	height:100px;
-	position:relative;
-	left:50%;
-	margin-left:-30%;
-	margin-bottom:40px;
+.card {
+	width:100%;
+	height:100%;
+	position:absolute;
+	transform-style: preserve-3d;
+	transition:transform .5s;
+}
+
+.card li {
+	margin:0;
+	display:inline-block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	backface-visibility: hidden;
+}
+
+.card .blank {
+	background:inherit;
+}
+
+.card .headshot {
+	transform:rotateY(180deg);
+}
+
+.card.flipped {
+	transform: rotateY(180deg);
+}
+
+.headshot {
+	display:inline-block;
+	height:30vh;
+	width:25%;
 	background-color:#fff;
-	border:0px solid;
-	border-radius:5px;
+	border:none;
+	margin-right:-4px;
 }
 
-textarea[value] {
-	color:#ccc;
+#iliya {
+	background-image:url('../images/iliya.jpg');
+	background-size:cover;
+}
+
+#phil {
+	background-image:url('../images/phil.jpg');
+	background-size:cover;
+}
+
+#becca {
+	background-image:url('../images/becca.jpg');
+	background-size:cover;
+}
+
+#jess {
+	background-image:url('../images/jess.png');
+	background-size:cover;
 }
 
 /*EMAIL*/
-
-.container3 {
-	height:100vh;
-	min-height:768px;
-	width:100%;
-	position:relative;
-}
 
 #email {
 	font-family:'josefin slab', sans-serif;
@@ -394,6 +424,8 @@ textarea[value] {
 #email input[type="submit"]:hover {
 	background-color:#333;
 }
+
+/*RESPONSIVE*/
 
 @media only screen and (max-width:740px) {
 	header {height:auto; width:100%; box-shadow: none}
