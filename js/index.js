@@ -2,10 +2,8 @@
 // TITLE FADEIN
 
 $(document).ready(function(){
-	$('.title').slideDown(900, function() {
-		$('.next').fadeIn(900);
-		$('.down-arrow').fadeIn(900);
-	});
+	$('.next').fadeIn(900);
+	$('.down-arrow').fadeIn(900);
 });
 
 // NAV
@@ -13,9 +11,11 @@ $(document).ready(function(){
 $(window).scroll(function() {
 	if ($(this).scrollTop() >= 200){
 		$('#backtotop').fadeIn(100);
+		$('header').addClass('shadow');
 	}
 	else {
 		$('#backtotop').fadeOut(100);
+		$('header').removeClass('shadow');
 	}
 });
 
@@ -41,20 +41,4 @@ $('.hamburger').on('click', function() {
 	$('.hamburger .line:eq(1)').fadeToggle(50);
 	$('.hamburger .line').last().toggleClass('rotate-ccw');
 	$('.hamburger ul').fadeToggle(200);
-});
-
-//ABOUT FADE-INS
-
-$window = $(window);
-
-$window.scroll(function() {
-	if ($window.scrollTop() >= ($('#about').offset().top - 40)) {
-		$('.table .card').each(function(i, el){
-			var firm = ['iliya.jpg','phil.jpg','becca.jpg','jess.jpg']
-			setTimeout(function(){
-				$(el).addClass('flipped');
-				$(el).css('background-image', firm[i])
-			}, i * 500);
-		});
-	}
 });
